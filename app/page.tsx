@@ -1,20 +1,10 @@
-'use client'
-
-import { useState, useEffect } from 'react'
+import SentimentAnalyzer from '../components/SentimentAnalyzer'
 
 export default function Home() {
-  const [message, setMessage] = useState('')
-
-  useEffect(() => {
-    fetch('/api/hello')
-      .then((res) => res.json())
-      .then((data) => setMessage(data.message))
-  }, [])
-
   return (
-    <div>
-      <h1>Welcome to Next.js 14 with Backend Support</h1>
-      <p>Message from API: {message}</p>
+    <div className="container mx-auto p-4 ">
+      <h1 className="text-2xl font-bold mb-4">Article Sentiment Analyzer</h1>
+      <SentimentAnalyzer />
     </div>
   )
 }
